@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[小米平板1刷ubuntu系统]]></title>
+    <url>%2F2019%2F07%2F19%2Fa%2F</url>
+    <content type="text"><![CDATA[半年前博主在学习C语言语法，无奈时间较零散，砖头书不能随身带，就用se看电子书，渐渐想随时敲敲代码跑跑程序（光看书实在是太无聊了），与此同时，也在鼓捣linux（其实那时手头连一个运行linux的电脑都没），于是就开始选设备，从树梅派挑到nexus7再到chromebook，额。。。买东西真累，想起手头有块闲置的一代小米平板，就开始了折腾之路，先是用termux凑合，再是安装Kali，用ssh登录本地端口，在安卓环境并行运行linux，emmm，没有GUI的linux真难受。。。最后求助万能的google，找到4PDA论坛mocha大神从英伟达tegra-k1开发板上移植的ubuntu14.04项目地址，刷入小米平板，开始了奇妙历险！ 准备工作解BL琐想要刷入第三方ROM，先要刷入第三方rec；想要刷入第三方rec，先要解Bootloader琐。按照官方操作即可：解锁小米手机 刷TWRP先刷入twrp2.7.4再刷入TWRP_multirom-v3.0.3注意: v3.0.3必须由v2.7.1升级，不能一次刷入 待续。。。。。]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F07%2F19%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

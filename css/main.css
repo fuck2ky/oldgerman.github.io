@@ -1712,7 +1712,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe;
+  background: #11c6ff;
 }
 .feed-link,
 .chat {
@@ -2771,4 +2771,10 @@ ul.breadcrumb li+li:last-child {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+#days {
+  display: block;
+  color: #35779b;
+  font-size: 13px;
+  margin-top: 15px;
 }

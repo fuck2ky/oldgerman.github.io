@@ -544,7 +544,25 @@
 <h3 id="刷TWRP和multirom"><a href="#刷TWRP和multirom" class="headerlink" title="刷TWRP和multirom"></a>刷TWRP和multirom</h3><p><a href="https://pan.baidu.com/s/18b-AI4UijXQeEea_Zrd09g" target="_blank" rel="noopener">recovery工具链接</a>提取码: qc15<br>解BL琐后，将上述链接下载的所有文件(不用解压）放在平板根目录，开机按“音量+”和电源键，进入MIUI原厂recovery,刷入miuies_TWRP_MiPad_2.7.1_signed.zip<br>待刷入完成，重启到recovery，进入TWRP-v2.7.1界面，该recovery画面不能填充整个屏幕，稍后咱刷入multirom_TWRP_3.1.1-0.img即可解决。<br>*注意: v3.0.3必须由v2.7.1升级，不能一次刷入</p>
 <p>在TWRP-v2.7.1界面，点击”Install”，进入文件目录，找到sd_card文件夹，点击进入，此文件夹即是平板内部flash储存的根目录。找到boot-kexec-miuiSmoke6.12.22.zip，点击此文件，右滑刷入，待刷入完成。再找一找multirom_TWRP_3.1.1-0.img发现并没有，点击右下脚的zip方框，选择img，再找下，即可找到，点击此文件，右滑刷入，待刷入完成，点击“reboot to system”，重启到系统，若一切正常，开启会出现multirom多重引导，点击倒计时即可手动选择启动系统，点击第一个系统，即可正常进入当前系统。</p>
 <h2 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h2><p>。。。。。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -763,7 +781,7 @@
         
         
 
--        <div id="days"></div>
+<div id="days"></div>
 <script>
 function show_date_time(){
     window.setTimeout("show_date_time()", 1000);
@@ -790,6 +808,7 @@ function setzero(i) {
 }
 show_date_time();
 </script>
+
 
 
 

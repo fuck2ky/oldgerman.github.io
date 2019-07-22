@@ -1712,7 +1712,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #11c6ff;
+  background: #ccf1ff;
 }
 .feed-link,
 .chat {
@@ -2777,4 +2777,7 @@ ul.breadcrumb li+li:last-child {
   color: #35779b;
   font-size: 13px;
   margin-top: 15px;
+}
+body {
+  background: url("images/psa.jpg");
 }

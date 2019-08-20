@@ -1,15 +1,14 @@
-if (hexo-config('sidebar.position') == 'right') {
+if (hexo-config('sidebar.position') == 'left') {
   .sidebar {
-    right: 0;
-    left: auto;
+    right: auto;
+    left: 0;
   }
-
   .sidebar-toggle, .back-to-top {
-    right: $b2t-position-right;
-    left: auto;
+    right: auto;
+    left: $b2t-position-right;
 
     +tablet-mobile() {
-      right: $b2t-position-right-mobile;
+      left: $b2t-position-right-mobile;
     }
   }
 }

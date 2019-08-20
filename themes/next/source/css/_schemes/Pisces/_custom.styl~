@@ -1,0 +1,8 @@
+#days {
+    display: block;
+    color: rgb(53, 119, 155);
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+body { background:url(images/psa.jpg);}

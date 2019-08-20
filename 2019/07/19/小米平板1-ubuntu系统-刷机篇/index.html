@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="OldGreman&#39;s Blog">
 <meta property="og:description" content="米板1代闲置？手把手教你打造linux平板，让老黄的核弹继续发挥余热，连载！！！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/logo.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/1.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/2.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/4.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/3.jpg">
@@ -70,11 +70,11 @@
 <meta property="og:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/6.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/0.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/10.jpg">
-<meta property="og:updated_time" content="2019-08-20T14:45:30.372Z">
+<meta property="og:updated_time" content="2019-08-20T14:58:35.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小米平板1-ubuntu系统_刷机篇">
 <meta name="twitter:description" content="米板1代闲置？手把手教你打造linux平板，让老黄的核弹继续发挥余热，连载！！！">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/logo.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/1.jpg">
   <link rel="canonical" href="http://yoursite.com/2019/07/19/小米平板1-ubuntu系统-刷机篇/">
 
 
@@ -294,7 +294,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-20 22:45:30" itemprop="dateModified" datetime="2019-08-20T22:45:30+08:00">2019-08-20</time>
+                <time title="修改时间：2019-08-20 22:58:35" itemprop="dateModified" datetime="2019-08-20T22:58:35+08:00">2019-08-20</time>
               </span>
             
           
@@ -369,7 +369,7 @@
 
       
         <p>半年前博主在学习C语言语法，无奈时间较零散，砖头书不能随身带，就用se看电子书，渐渐想随时敲敲代码跑跑程序（光看书实在是太无聊了），与此同时，也在鼓捣linux（其实那时手头连一个运行linux的电脑都没），于是就开始选设备，从树梅派挑到nexus7再到chromebook，额。。。买东西真累，想起手头有块闲置的一代小米平板，先是用termux凑合，再是安装Kali，用ssh登录本地端口，在安卓环境并行运行linux，emmm，没有GUI的linux真难受。。。最后求助万能的google，找到4PDA论坛mocha大神从英伟达tegra-k1开发板上移植的ubuntu14.04<a href="https://4pda.ru/forum/index.php?showtopic=821143" target="_blank" rel="noopener">项目地址</a>，成功刷入小米平板！</p>
-<p><img src="/2019/07/19/小米平板1-ubuntu系统-刷机篇/logo.jpg" alt="刷入成功效果"></p>
+<p><img src="/2019/07/19/小米平板1-ubuntu系统-刷机篇/1.jpg" alt="刷入成功效果"></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="解BL琐"><a href="#解BL琐" class="headerlink" title="解BL琐"></a>解BL琐</h3><p>  想要刷入第三方ROM，先要刷入第三方rec；<br>  想要刷入第三方rec，先要解Bootloader琐。<br>  按照官方操作即可：<a href="http://www.miui.com/unlock/index.html" target="_blank" rel="noopener">解锁小米手机</a></p>
 <h3 id="刷TWRP和multirom"><a href="#刷TWRP和multirom" class="headerlink" title="刷TWRP和multirom"></a>刷TWRP和multirom</h3><p>  <a href="https://pan.baidu.com/s/18b-AI4UijXQeEea_Zrd09g" target="_blank" rel="noopener">recovery工具链接</a>提取码: qc15<br>  解BL琐后，将上述链接下载的所有文件(不用解压）放在平板根目录，开机按“音量+”和电源键，进入MIUI原厂recovery,刷入miuies_TWRP_MiPad_2.7.1_signed.zip<br>待刷入完成，重启到recovery，进入TWRP-v2.7.1界面，该recovery画面不能填充整个屏幕，稍后咱刷入multirom_TWRP_3.1.1-0.img即可解决。<br>  *注意: v3.0.3必须由v2.7.1升级，不能一次刷入</p>
 <p>  在TWRP-v2.7.1界面，点击”Install”，进入文件目录，找到sd_card文件夹，点击进入，此文件夹即是平板内部flash储存的根目录。找到boot-kexec-miuiSmoke6.12.22.zip，点击此文件，右滑刷入，待刷入完成。再找一找multirom_TWRP_3.1.1-0.img发现并没有，点击右下脚的zip方框，选择img，再找下，即可找到，点击此文件，右滑刷入，待刷入完成，点击“reboot to system”，重启到系统</p>

@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="OldGreman&#39;s Blog">
 <meta property="og:description" content="博客功能测试">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-20T13:12:46.561Z">
+<meta property="og:updated_time" content="2019-08-20T13:57:13.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TEST">
 <meta name="twitter:description" content="博客功能测试">
@@ -274,12 +274,25 @@
                 
               
 
-              <time title="创建时间：2019-08-20 19:39:44 / 修改时间：21:12:46" itemprop="dateCreated datePublished" datetime="2019-08-20T19:39:44+08:00">2019-08-20</time>
+              <time title="创建时间：2019-08-20 19:39:44 / 修改时间：21:57:13" itemprop="dateCreated datePublished" datetime="2019-08-20T19:39:44+08:00">2019-08-20</time>
             </span>
           
             
 
             
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/test/" itemprop="url" rel="index"><span itemprop="name">test</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -313,7 +326,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>0</span>
+              <span>567</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -338,7 +351,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h2 id="190820-本地图片测试"><a href="#190820-本地图片测试" class="headerlink" title="190820_本地图片测试"></a>190820_本地图片测试</h2><h3 id="1-修改站点配置文件"><a href="#1-修改站点配置文件" class="headerlink" title="1. 修改站点配置文件"></a>1. 修改站点配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 路径 /hexo/_config.yml</span><br><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>这之后，当你 hexo n XXX 时，会自动在 /hexo/source/_post 下生成一个 XXX 文件夹；</p>
+<p>我们将需要插入 XXX 博文的图片 Test.jpg 放到此文件夹，稍后用Typora编辑博文时直接拖入即可</p>
+<h3 id="2-安装路径转换插件"><a href="#2-安装路径转换插件" class="headerlink" title="2. 安装路径转换插件"></a>2. 安装路径转换插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-安装Typora"><a href="#3-安装Typora" class="headerlink" title="3. 安装Typora"></a>3. 安装Typora</h3><p>将Typora设置为*.md文件的默认编辑器</p>
+<p>进入 /hexo/source/_post</p>
+<p>打开刚才创建的 XXX.md 文件</p>
+<p>将 /hexo/source/_post/XXX/Test.jpg 直接拖拽到 Typora 编辑界面</p>
+<p>会自动连带图片生成：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Test-Image</span>](<span class="link">D:\ODG blog\oldgerman.github.io\source\_posts\text\Test.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<p>挪开选中图片的鼠标，自动隐藏引用代码，仅将图片显示：</p>
+<p>![Test-Image](D:\ODG blog\oldgerman.github.io\source_posts\text\Test.jpg)</p>
+<h3 id="4-上传到GitHub"><a href="#4-上传到GitHub" class="headerlink" title="4. 上传到GitHub"></a>4. 上传到GitHub</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>测试完毕</p>
+
     </div>
 
     
@@ -406,8 +437,17 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -439,7 +479,9 @@
         
           
         
-        <span class="site-state-item-count">1</span>
+          
+        
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -470,6 +512,23 @@
 
         </div>
       </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#190820-本地图片测试"><span class="nav-number">1.</span> <span class="nav-text">190820_本地图片测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改站点配置文件"><span class="nav-number">1.1.</span> <span class="nav-text">1. 修改站点配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装路径转换插件"><span class="nav-number">1.2.</span> <span class="nav-text">2. 安装路径转换插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装Typora"><span class="nav-number">1.3.</span> <span class="nav-text">3. 安装Typora</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-上传到GitHub"><span class="nav-number">1.4.</span> <span class="nav-text">4. 上传到GitHub</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
@@ -525,12 +584,12 @@ show_date_time();
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">13k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

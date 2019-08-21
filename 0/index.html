@@ -71,7 +71,7 @@
 <meta property="og:image" content="http://yoursite.com/0/TIM%E6%88%AA%E5%9B%BE20190821154047.png">
 <meta property="og:image" content="http://yoursite.com/0/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(152).png">
 <meta property="og:image" content="http://yoursite.com/0/TIM%E6%88%AA%E5%9B%BE20190821160818.png">
-<meta property="og:updated_time" content="2019-08-21T08:30:58.102Z">
+<meta property="og:updated_time" content="2019-08-21T10:03:07.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小娱C5_刷机篇">
 <meta name="twitter:description" content="矿渣刷入 breed不死固件 + H大老毛子">
@@ -284,7 +284,7 @@
                 
               
 
-              <time title="创建时间：2019-08-21 12:54:26 / 修改时间：16:30:58" itemprop="dateCreated datePublished" datetime="2019-08-21T12:54:26+08:00">2019-08-21</time>
+              <time title="创建时间：2019-08-21 12:54:26 / 修改时间：18:03:07" itemprop="dateCreated datePublished" datetime="2019-08-21T12:54:26+08:00">2019-08-21</time>
             </span>
           
             
@@ -436,7 +436,7 @@
 <h4 id="原厂控制台界面："><a href="#原厂控制台界面：" class="headerlink" title="原厂控制台界面："></a>原厂控制台界面：</h4><p><img src="/0/Inked%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(147)_LI.jpg" alt></p>
 <p>看一看，SATA硬盘可以识别，但貌似ssh打不开，所以没啥卵用：</p>
 <p><img src="/0/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(148).png" alt></p>
-<h2 id="4-刷入Breed"><a href="#4-刷入Breed" class="headerlink" title="4. 刷入Breed"></a>4. 刷入Breed</h2><h4 id="Beed是啥？"><a href="#Beed是啥？" class="headerlink" title="Beed是啥？"></a>Beed是啥？</h4><p>breed由恩山论坛大神<a href="https://www.right.com.cn/forum/space-uid-200302.html" target="_blank" rel="noopener">HackPascal</a>开发，breed是一种Bootloader，类似于于电脑的BIOS，核心功能是引导操作系统，li常见的uboot启动是单线程的，而breed是多线程的，难度系数比uboot大得多，增加了调度器，已经具备了小操作系统的核心。</p>
+<h2 id="4-刷入Breed"><a href="#4-刷入Breed" class="headerlink" title="4. 刷入Breed"></a>4. 刷入Breed</h2><h4 id="Beed是啥？"><a href="#Beed是啥？" class="headerlink" title="Beed是啥？"></a>Beed是啥？</h4><p>breed由恩山论坛大神<a href="https://www.right.com.cn/forum/space-uid-200302.html" target="_blank" rel="noopener">HackPascal</a>开发，breed是一种Bootloader，类似于电脑的BIOS，核心功能是引导操作系统，常见的uboot启动是单线程的，而breed是多线程的，难度系数比uboot大得多，增加了调度器，已经具备小型操作系统的核心</p>
 <h4 id="莫大佬文章的源地址："><a href="#莫大佬文章的源地址：" class="headerlink" title="莫大佬文章的源地址："></a>莫大佬文章的源地址：</h4><p>一键刷入BREED教程：<a href="http://www.nas1688.com/166.html" target="_blank" rel="noopener">已失效</a></p>
 <h4 id="在此重新复述刷入方法："><a href="#在此重新复述刷入方法：" class="headerlink" title="在此重新复述刷入方法："></a>在此重新复述刷入方法：</h4><ul>
 <li>上电启动，使用网线连接电脑和小娱路由器C5的任意Lan口</li>
@@ -444,8 +444,8 @@
 <li>win10下直接该程序运行不行，需要右键 <strong>以管理员模式运行该程序</strong>，才能刷入成功不死breed<br>等待电脑分配到小娱的IP，可以访问<code>192.168.188.1</code>就行</li>
 <li>将网关IP填入工具中，默认密码admin，点击刷入即可</li>
 </ul>
-<h4 id="刷入成功："><a href="#刷入成功：" class="headerlink" title="刷入成功："></a>刷入成功：</h4><p>根据提示，先拔掉电源，等待下一步操作</p>
-<p><img src="/0/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(149).png" alt></p>
+<h4 id="刷入成功："><a href="#刷入成功：" class="headerlink" title="刷入成功："></a>刷入成功：</h4><p><img src="/0/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(149).png" alt></p>
+<p>根据提示，先拔掉电源，等待下一步操作</p>
 <h2 id="5-重启到Breed-Web控制台"><a href="#5-重启到Breed-Web控制台" class="headerlink" title="5. 重启到Breed Web控制台"></a>5. 重启到Breed Web控制台</h2><h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h4><ul>
 <li>刷第三方固件一定要进入Breed界面刷入</li>
 <li>Breed界面进入方法:<br>a. 拔掉电源<br>b. 按住Reset键不放<br>c. 接通电源<br>d. 6秒后松开Reset键<br>e. 浏览器访问：<code>192.168.1.1</code>进入 Breed Web控制台</li>

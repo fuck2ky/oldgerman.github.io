@@ -361,41 +361,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="1-修改站点配置文件"><a href="#1-修改站点配置文件" class="headerlink" title="1. 修改站点配置文件"></a>1. 修改站点配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 路径 /hexo/_config.yml</span><br><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
+        <h3 id="1-修改站点配置文件"><a class="header-anchor" href="#1-修改站点配置文件">¶</a>1. 修改站点配置文件</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 路径 /hexo/_config.yml</span><br><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>这之后，当你 hexo n XXX 时，会自动在 /hexo/source/_post 下生成一个 XXX 文件夹；</p>
 <p>我们将需要插入 XXX 博文的图片 Test.jpg 放到此文件夹，稍后用Typora编辑博文时直接拖入即可</p>
-<h3 id="2-安装路径转换插件-踩坑"><a href="#2-安装路径转换插件-踩坑" class="headerlink" title="2. 安装路径转换插件|踩坑"></a>2. 安装路径转换插件|踩坑</h3><h4 id="注意，一定要下："><a href="#注意，一定要下：" class="headerlink" title="注意，一定要下："></a>注意，一定要下：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br><span class="line">......</span><br><span class="line">+ hexo-asset-image@0.0.5</span><br></pre></td></tr></table></figure>
-
+<h3 id="2-安装路径转换插件-踩坑"><a class="header-anchor" href="#2-安装路径转换插件-踩坑">¶</a>2. 安装路径转换插件|踩坑</h3>
+<h4 id="注意-一定要下："><a class="header-anchor" href="#注意-一定要下：">¶</a>注意，一定要下：</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br><span class="line">......</span><br><span class="line">+ hexo-asset-image@0.0.5</span><br></pre></td></tr></table></figure>
 <p>正确生成为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">INFO  Start processing</span><br><span class="line">update link as:--&gt;/2019/08/20/<span class="built_in">test</span>/Test.jpg</span><br><span class="line">update link as:--&gt;/2019/08/20/<span class="built_in">test</span>/Test.jpg</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-
 <p>如有生成绝对路径不完整，<a href="https://github.com/xcodebuild/hexo-asset-image/issues/13" target="_blank" rel="noopener">请参考</a></p>
-<h4 id="注意，不要下："><a href="#注意，不要下：" class="headerlink" title="注意，不要下："></a>注意，不要下：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br><span class="line">......</span><br><span class="line">+ hexo-asset-image@1.0.0</span><br></pre></td></tr></table></figure>
-
-<p><a href="mailto:hexo-asset-image@1.0.0" target="_blank" rel="noopener">hexo-asset-image@1.0.0</a>版本根本无法在 hexo g 生成的 *.html 文件中生成正确的 img src 的路径</p>
+<h4 id="注意-不要下："><a class="header-anchor" href="#注意-不要下：">¶</a>注意，不要下：</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br><span class="line">......</span><br><span class="line">+ hexo-asset-image@1.0.0</span><br></pre></td></tr></table></figure>
+<p>hexo-asset-image@1.0.0版本根本无法在 hexo g 生成的 *.html 文件中生成正确的 img src 的路径</p>
 <p>错误生成如下，无法载入图片：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">INFO  Start processing</span><br><span class="line">update link as:--&gt;/.com//Test.jpg</span><br><span class="line">update link as:--&gt;/.com//Test.jpg</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-安装Typora"><a href="#3-安装Typora" class="headerlink" title="3. 安装Typora"></a>3. 安装Typora</h3><p>将Typora设置为*.md文件的默认编辑器</p>
+<h3 id="3-安装typora"><a class="header-anchor" href="#3-安装typora">¶</a>3. 安装Typora</h3>
+<p>将Typora设置为*.md文件的默认编辑器</p>
 <p>进入 /hexo/source/_post</p>
-<p>打开刚才创建的 XXX.md 文件</p>
+<p>打开刚才创建的 <a href="http://XXX.md" target="_blank" rel="noopener">XXX.md</a> 文件</p>
 <p>将 /hexo/source/_post/XXX/Test.jpg 直接拖拽到 Typora 编辑界面</p>
 <p>会自动连带图片生成：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Test</span>](<span class="link">D:\ODG blog\oldgerman.github.io\source\_posts\hexo如何上传本地图片\Test.jpg</span>)</span><br></pre></td></tr></table></figure>
-
 <p>将就绝对路径删除部分，仅保留：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Test-Image</span>](<span class="link">\hexo如何上传本地图片\Test.jpg</span>)</span><br></pre></td></tr></table></figure>
-
 <p>并将两个 \ 修改成：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Test-Image</span>](<span class="link">/hexo如何上传本地图片/Test.jpg</span>)</span><br></pre></td></tr></table></figure>
-
 <p>若挪开选中图片的鼠标，自动隐藏引用代码，仅将图片显示：</p>
 <p><img src="/eeea93b8/Test.jpg" alt="Test-Image"></p>
-<h3 id="4-本地测试-上传到GitHub"><a href="#4-本地测试-上传到GitHub" class="headerlink" title="4. 本地测试+上传到GitHub"></a>4. 本地测试+上传到GitHub</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
+<h3 id="4-本地测试-上传到github"><a class="header-anchor" href="#4-本地测试-上传到github">¶</a>4. 本地测试+上传到GitHub</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo g</span></span><br><span class="line"><span class="attribute">hexo d</span></span><br></pre></td></tr></table></figure>
-
 <p>至此，测试完毕！</p>
 
     </div>
@@ -554,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改站点配置文件"><span class="nav-number">1.</span> <span class="nav-text">1. 修改站点配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装路径转换插件-踩坑"><span class="nav-number">2.</span> <span class="nav-text">2. 安装路径转换插件|踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意，一定要下："><span class="nav-number">2.1.</span> <span class="nav-text">注意，一定要下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意，不要下："><span class="nav-number">2.2.</span> <span class="nav-text">注意，不要下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装Typora"><span class="nav-number">3.</span> <span class="nav-text">3. 安装Typora</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-本地测试-上传到GitHub"><span class="nav-number">4.</span> <span class="nav-text">4. 本地测试+上传到GitHub</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改站点配置文件"><span class="nav-number">1.</span> <span class="nav-text">¶1. 修改站点配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装路径转换插件-踩坑"><span class="nav-number">2.</span> <span class="nav-text">¶2. 安装路径转换插件|踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意-一定要下："><span class="nav-number">2.1.</span> <span class="nav-text">¶注意，一定要下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意-不要下："><span class="nav-number">2.2.</span> <span class="nav-text">¶注意，不要下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装typora"><span class="nav-number">3.</span> <span class="nav-text">¶3. 安装Typora</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-本地测试-上传到github"><span class="nav-number">4.</span> <span class="nav-text">¶4. 本地测试+上传到GitHub</span></a></li></ol></div>
             
 
           </div>
@@ -621,7 +617,7 @@ show_date_time();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

@@ -80,7 +80,7 @@
 <meta property="og:image" content="http://yoursite.com/29c16836/df-h.png">
 <meta property="og:image" content="http://yoursite.com/29c16836/nmon-install.png">
 <meta property="og:image" content="http://yoursite.com/29c16836/nmon.png">
-<meta property="og:updated_time" content="2019-08-22T09:03:55.343Z">
+<meta property="og:updated_time" content="2019-08-29T10:35:47.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小娱C5_配置篇">
 <meta name="twitter:description" content="ssh + 挂载硬盘 + 文件服务器 + Aria2 + 百度云 + 酸酸乳 + opkg配置">
@@ -304,7 +304,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-22 17:03:55" itemprop="dateModified" datetime="2019-08-22T17:03:55+08:00">2019-08-22</time>
+                <time title="修改时间：2019-08-29 18:35:47" itemprop="dateModified" datetime="2019-08-29T18:35:47+08:00">2019-08-29</time>
               </span>
             
           
@@ -353,7 +353,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>6.4k</span>
+              <span>6.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -439,10 +439,11 @@
 <li><code>n</code> 创建一个新分区</li>
 <li><code>p</code> 分区类型为主分区</li>
 <li><code>1</code> 分区号为1，起始扇区为默认，直接回车或者1都可以</li>
-<li><code>+512M</code> 结束扇区，直接分配512M分区</li>
+<li>First sector：<code>不键入参数</code> 直接回车</li>
+<li>Last sector：<code>+512M</code> 结束扇区，直接分配512M分区</li>
 </ul>
 <p>以上操作如下，每一次键入参数加上回车：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Command (m <span class="keyword">for</span> <span class="built_in">help</span>): n</span><br><span class="line">Partition <span class="built_in">type</span></span><br><span class="line">   p   primary partition (1-4)</span><br><span class="line">   e   extended</span><br><span class="line">p</span><br><span class="line">Partition number (1-4): 1</span><br><span class="line">First sector (2048-1048575, default 2048): +512M</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Command (m <span class="keyword">for</span> <span class="built_in">help</span>): n</span><br><span class="line">Partition <span class="built_in">type</span></span><br><span class="line">   p   primary partition (1-4)</span><br><span class="line">   e   extended</span><br><span class="line">p</span><br><span class="line">Partition number (1-4): 1</span><br><span class="line">First sector (2048-1048575, default 2048): </span><br><span class="line">Using default value 2048</span><br><span class="line">Last sector or +size&#123;,K,M,G,T&#125; (2048-1048574): +512M</span><br></pre></td></tr></table></figure>
 <h5 id="2-创建ext4分区"><a class="header-anchor" href="#2-创建ext4分区">¶</a>2）创建ext4分区</h5>
 <p>我的硬盘是1282G，其中512M做swap分区，剩下的做/opt分区，如果你有其他规划按照自己的方式来就可以。但是要注意MBR磁盘的分区规则，最多4个主分区，单盘不超过2TB，有超过4个分区数量的需求请分一个扩展分区然后再分逻辑分区，如果是大于2TB的磁盘就不要用fdisk这个工具了</p>
 <p>😷接着以同样的方式创建第二个分区:</p>
@@ -789,7 +790,7 @@ show_date_time();
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">20k</span>
+    <span title="站点总字数">21k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

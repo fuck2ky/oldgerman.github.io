@@ -69,7 +69,7 @@
 <meta property="og:image" content="http://yoursite.com/f3fd3c5b/change_speed.png">
 <meta property="og:image" content="http://yoursite.com/f3fd3c5b/2400rpm++.png">
 <meta property="og:image" content="http://yoursite.com/f3fd3c5b/wdt_reset.png">
-<meta property="og:updated_time" content="2020-02-19T07:37:01.923Z">
+<meta property="og:updated_time" content="2020-02-19T08:06:47.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="esp8266 4线风扇调速测速">
 <meta name="twitter:description" content="使用visual studio的arduino环境">
@@ -282,7 +282,7 @@
                 
               
 
-              <time title="创建时间：2020-02-19 12:50:59 / 修改时间：15:37:01" itemprop="dateCreated datePublished" datetime="2020-02-19T12:50:59+08:00">2020-02-19</time>
+              <time title="创建时间：2020-02-19 12:50:59 / 修改时间：16:06:47" itemprop="dateCreated datePublished" datetime="2020-02-19T12:50:59+08:00">2020-02-19</time>
             </span>
           
             
@@ -410,7 +410,7 @@
 <p><img src="/f3fd3c5b/sch.png" alt></p>
 <p>开发板为NodeMCU 1.0 ESP-12E</p>
 <p>R7为10k电位器，接入A0读取模拟量</p>
-<p>T1为三极管，用2N222A代替，参数40V 600mA，集电极限流电阻建议1~4.7k</p>
+<p>T1为三极管，用2N222A代替，参数40V 600mA，集电极限流电阻建议1-4.7k</p>
 <p>C1为滤波电容，推荐钽电容或铝电解</p>
 <p>英特尔的图27.4k用R4 20k和R5 6.8k代替，合计26.8k，FAN_SPEED高电平增加到2.89V</p>
 <p>12V电源和开发板必须共地，否则三极管不能正常开关，无法调速</p>
@@ -430,9 +430,9 @@
 <p><img src="/f3fd3c5b/change_speed.png" alt></p>
 <h2 id="7-有关代码的疑问"><a class="header-anchor" href="#7-有关代码的疑问">¶</a>7.有关代码的疑问</h2>
 <h4 id="第35行-analogread-返回值范围"><a class="header-anchor" href="#第35行-analogread-返回值范围">¶</a>第35行，<code>analogRead()</code>，返回值范围</h4>
-<p>esp8266内置10位ADC，所以该函数返回范围0<sub>1023，对于Arduino开发板例如Uno，该函数返回0</sub>255</p>
+<p>esp8266内置10位ADC，所以该函数返回范围0-1023，对于Arduino开发板例如Uno，该函数返回0-255</p>
 <h4 id="第56行-sensorvalue-720-为什么不是1023？"><a class="header-anchor" href="#第56行-sensorvalue-720-为什么不是1023？">¶</a>第56行，<code>sensorValue &lt; 720</code>，为什么不是1023？</h4>
-<p>一般来说，12V风扇的最低转速不为0，例如猫头鹰的NF-12，其转速范围300<sub>1500rpm，题主测试用的4010风扇，转速范围2400</sub>128400左右，实测从A0读取的值大于720时，继续旋转电位器增大读数，风扇测速线的脉冲频率在40Hz左右不变，所以，可以认为在720时，风扇已经降至最低转速，继续减小esp8266输出的pwm占空比，并不会使风扇继续降速，如图：</p>
+<p>一般来说，12V风扇的最低转速不为0，例如猫头鹰的NF-12，其转速范围300-1500rpm，题主测试用的4010风扇，转速范围2400-128400左右，实测从A0读取的值大于720时，继续旋转电位器增大读数，风扇测速线的脉冲频率在40Hz左右不变，所以，可以认为在720时，风扇已经降至最低转速，继续减小esp8266输出的pwm占空比，并不会使风扇继续降速，如图：</p>
 <p><img src="/f3fd3c5b/2400rpm++.png" alt></p>
 <h4 id="若继续增大到1023-会导致看门狗复位"><a class="header-anchor" href="#若继续增大到1023-会导致看门狗复位">¶</a>若继续增大到1023，会导致看门狗复位</h4>
 <p>众所周知，esp8266不能像Arduino那样长时间执行循环，实测当跳到1023左右时，风扇的测速线不再输出脉冲信号，因为我们在for循环中调用了多次<code>pulseIn()</code>，该函数默认等待超时时间为1秒，测速线停止输出脉冲，<code>pulseIn()</code>每次都等待1秒，超时触发看门狗，复位瞬间：</p>

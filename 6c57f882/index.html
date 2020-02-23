@@ -57,15 +57,15 @@
   <meta name="description" content="使用Typora编辑器快速上手，解锁更多功能">
 <meta name="keywords" content="Typora">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo-博客如何写出彩色字体，能实时预览的那种？">
+<meta property="og:title" content="hexo 博客如何写出彩色字体，能实时预览的那种？">
 <meta property="og:url" content="http://yoursite.com/6c57f882/index.html">
 <meta property="og:site_name" content="OldGreman&#39;s Blog">
 <meta property="og:description" content="使用Typora编辑器快速上手，解锁更多功能">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/6c57f882/Typora-logo.png">
-<meta property="og:updated_time" content="2020-02-20T15:36:16.842Z">
+<meta property="og:updated_time" content="2020-02-21T09:10:28.388Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo-博客如何写出彩色字体，能实时预览的那种？">
+<meta name="twitter:title" content="hexo 博客如何写出彩色字体，能实时预览的那种？">
 <meta name="twitter:description" content="使用Typora编辑器快速上手，解锁更多功能">
 <meta name="twitter:image" content="http://yoursite.com/6c57f882/Typora-logo.png">
   <link rel="canonical" href="http://yoursite.com/6c57f882/">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>hexo-博客如何写出彩色字体，能实时预览的那种？ | OldGreman's Blog</title>
+  <title>hexo 博客如何写出彩色字体，能实时预览的那种？ | OldGreman's Blog</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -260,7 +260,7 @@
       <meta itemprop="name" content="OldGreman's Blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">hexo-博客如何写出彩色字体，能实时预览的那种？
+        <h1 class="post-title" itemprop="name headline">hexo 博客如何写出彩色字体，能实时预览的那种？
 
           
         </h1>
@@ -276,11 +276,19 @@
                 
               
 
-              <time title="创建时间：2020-02-20 23:26:37 / 修改时间：23:36:16" itemprop="dateCreated datePublished" datetime="2020-02-20T23:26:37+08:00">2020-02-20</time>
+              <time title="创建时间：2020-02-20 23:26:37" itemprop="dateCreated datePublished" datetime="2020-02-20T23:26:37+08:00">2020-02-20</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-21 17:10:28" itemprop="dateModified" datetime="2020-02-21T17:10:28+08:00">2020-02-21</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -298,7 +306,7 @@
           
 
           
-            <span id="/6c57f882/" class="post-meta-item leancloud_visitors" data-flag-title="hexo-博客如何写出彩色字体，能实时预览的那种？" title="阅读次数">
+            <span id="/6c57f882/" class="post-meta-item leancloud_visitors" data-flag-title="hexo 博客如何写出彩色字体，能实时预览的那种？" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -328,7 +336,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>1.3k</span>
+              <span>1.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -360,23 +368,23 @@
 <h1>一些实用的标签</h1>
 <h2 id="span-style-设置字体属性"><a class="header-anchor" href="#span-style-设置字体属性">¶</a>span - - - style | 设置字体属性</h2>
 <h3 id="杂烩用法："><a class="header-anchor" href="#杂烩用法：">¶</a>杂烩用法：</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style='color:文字颜色;background:背景颜色;font-size:文字大小;font-family:字体;'&gt;文字&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">'color:文字颜色;background:背景颜色;font-size:文字大小;font-family:字体;'</span>&gt;</span>文字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>style后传入的参数以分号隔开，参数数量可裁剪</p>
 <p>其中color：支持三种格式  颜色名，十六进制颜色值，RGB取色器</p>
 <h3 id="示例："><a class="header-anchor" href="#示例：">¶</a>示例：</h3>
 <ol>
 <li>三种color格式显示同样的红色字体：</li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style="color:red;"&gt;红不红？&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span>红不红？<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><span style="color:red;">红不红？</span></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style="color:rgb(255, 0, 0);"&gt;红不红？&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:rgb(255, 0, 0);"</span>&gt;</span>红不红？<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><span style="color:rgb(255, 0, 0);">红不红？</span></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style="color:#FF0000;"&gt;红不红？&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:#FF0000;"</span>&gt;</span>红不红？<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><span style="color:#FF0000;">红不红？</span></p>
 <ol start="2">
 <li>黑底白字仿宋50px：<span style="color:white;background:black;font-size:23px;font-family:仿宋;">黑白配</span></li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style='color:white;background:black;font-size:50px;font-family:仿宋;'&gt;黑白配&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">'color:white;background:black;font-size:50px;font-family:仿宋;'</span>&gt;</span>黑白配<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="b-strong-加粗字体"><a class="header-anchor" href="#b-strong-加粗字体">¶</a>b &amp; strong | 加粗字体</h2>
 <h3 id="用法："><a class="header-anchor" href="#用法：">¶</a>用法：</h3>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>我被B标签加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>我被Strong标签加粗<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -384,11 +392,11 @@
 <ol>
 <li>加粗字体：<b>加粗</b></li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;加粗&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>紫色加粗：<b><span style="color:BlueViolet;">骚紫色加粗</span></b></li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;&lt;span style="color:rgb(255, 0, 255);"&gt;骚紫色加粗&lt;/span&gt;&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:rgb(255, 0, 255);"</span>&gt;</span>骚紫色加粗<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="sup-sub-上标-下标"><a class="header-anchor" href="#sup-sub-上标-下标">¶</a>sup &amp; sub | 上标 &amp; 下标</h2>
 <h3 id="用法：-v2"><a class="header-anchor" href="#用法：-v2">¶</a>用法：</h3>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">上标：<span class="tag">&lt;<span class="name">sup</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line">下标：<span class="tag">&lt;<span class="name">sub</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -398,9 +406,11 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y = log<span class="tag">&lt;<span class="name">sub</span>&gt;</span>2 <span class="tag">&lt;/<span class="name">sub</span>&gt;</span>x</span><br></pre></td></tr></table></figure>
 <p>对数: y = log<sub>2 </sub>x</p>
 <h2 id="div-align-水平居中"><a class="header-anchor" href="#div-align-水平居中">¶</a>div - - align | 水平居中</h2>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>奇怪的知识增加了！<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>奇怪的知识增加了！<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <div align="center">奇怪的知识增加了！</div>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">'color:white;background:black;font-size:20px;'</span>&gt;</span>&amp;#12288&amp;#12288&amp;#12288&amp;#12288“事情总会朝着意想不到的方向发展”&amp;#12288&amp;#12288&amp;#12288 &amp;#12288<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<div align="center"><span style="color:white;background:black;font-size:20px;">&#12288&#12288&#12288&#12288“事情总会朝着意想不到的方向发展”&#12288&#12288&#12288 &#12288</span></div>
 <h1>后记</h1>
 <p>👉这几天就整理了这几个，如果有新的实用标签后续再补充哈~</p>
 <h1>参考文献</h1>
@@ -410,6 +420,7 @@
 <p><a href="https://blog.csdn.net/u011848617/article/details/72836146" target="_blank" rel="noopener">CSS文本居中问题</a></p>
 <p><a href="https://blog.csdn.net/testcs_dn/article/details/45719357" target="_blank" rel="noopener">颜色名列表</a></p>
 <p><a href="http://www.divcss5.com/html/h390.shtml" target="_blank" rel="noopener">html上标与下标注标签元素</a></p>
+<p><a href="https://segmentfault.com/a/1190000017194576" target="_blank" rel="noopener">字符编码及空白汉字占位符</a></p>
 
     </div>
 
@@ -444,6 +455,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/aedd6ac2/" rel="prev" title="esp8266 控制220V交流电">
+                  esp8266 控制220V交流电 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -503,7 +518,7 @@
         
           <a href="/archives">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -631,12 +646,12 @@ show_date_time();
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">27k</span>
+    <span title="站点总字数">31k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">25 分钟</span>
+    <span title="站点阅读时长">28 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>

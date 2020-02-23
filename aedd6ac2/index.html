@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="附送用电安全指南，高压危险，请注意用电卫生！">
+<meta name="keywords" content="220VAC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="esp8266 控制220V交流电">
+<meta property="og:url" content="http://yoursite.com/aedd6ac2/index.html">
+<meta property="og:site_name" content="OldGreman&#39;s Blog">
+<meta property="og:description" content="附送用电安全指南，高压危险，请注意用电卫生！">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/relayx4.png">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/%E5%8F%8C%E7%82%B9%E9%9A%94%E7%A6%BB.png">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/9.1.0%E5%8A%9F%E7%8E%87%E6%8D%9F%E8%80%97.png">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/9.2.0.png">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/OptoTRIACv1sch.png">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/%E9%9B%B6%E4%BD%8D%E4%BF%A1%E5%8F%B7%E4%BC%A0%E7%BB%99%E5%8D%95%E7%89%87%E6%9C%BA%E6%8E%A7%E5%88%B6.jpg">
+<meta property="og:updated_time" content="2020-02-23T15:53:19.555Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="esp8266 控制220V交流电">
+<meta name="twitter:description" content="附送用电安全指南，高压危险，请注意用电卫生！">
+<meta name="twitter:image" content="http://yoursite.com/aedd6ac2/relayx4.png">
+  <link rel="canonical" href="http://yoursite.com/aedd6ac2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>esp8266 控制220V交流电 | OldGreman's Blog</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">OldGreman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Refuse to play tickets!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-阅读排名">
+      
+    
+
+    <a href="/rank" rel="section"><i class="menu-item-icon fa fa-fw fa-list"></i> <br>阅读排名</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-wrapper">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/aedd6ac2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="过气德国佬">
+      <meta itemprop="description" content="潮起潮落，云卷云舒">
+      <meta itemprop="image" content="/images/psa.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OldGreman's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">esp8266 控制220V交流电
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-02-21 12:54:37" itemprop="dateCreated datePublished" datetime="2020-02-21T12:54:37+08:00">2020-02-21</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-23 23:53:19" itemprop="dateModified" datetime="2020-02-23T23:53:19+08:00">2020-02-23</time>
+              </span>
+            
+          
+
+          
+            <span id="/aedd6ac2/" class="post-meta-item leancloud_visitors" data-flag-title="esp8266 控制220V交流电" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/aedd6ac2/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/aedd6ac2/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>3.4k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
+            <div class="post-description">附送用电安全指南，高压危险，请注意用电卫生！</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1>PID：从弱电到强电</h1>
+<p>一个多前在b站学习PID温控，实现了继电器控制E3d加热块维持在100度(文章有时间再写)，使用12V直流电，功耗30W左右，没啥危险性。</p>
+<p>后来囤了个米家电烤箱，拆得七零八落搁书房一个多月了，为啥拆，好好用不行吗？</p>
+<p>事情是这样的，说来话长，算了长话短说，用风枪焊QFN封装，很容易让周边的元件吹偏或者脱落，简直心态炸裂有木有？smt的厂家都是刷好锡膏过多段回流焊炉，那焊点煞是饱满，于是琢磨着自己diy回流焊机，看了下各种diy方案，主要魔改电热盘或电烤箱</p>
+<p>emmm价格某宝看了下，你电炉不带运费都50多了，咸鱼100包邮的猴米烤箱，不仅全封闭还带热风循环(小声bb)，它不香吗😂</p>
+ <div align="center"><span style="color:white;background:black;font-size:20px;">&#12288&#12288&#12288&#12288“事情总会朝着意想不到的方向发展”&#12288&#12288&#12288 &#12288</span></div>
+pid解算出的pwm信号，还需要实现从弱电到强电的PWM转换，以控制烤箱的热管
+<p>使能器件可以用继电器(机械式)，mosfet，或者TRAIC，还有SSR，SSR的内部一般也是用mosfet或者TRAIC实现开关，博主最后选择了TRAIC+过零检测光耦，在回答为什么之前，你们还要学习一个各种器件的优劣：</p>
+<h2 id="继电器"><a class="header-anchor" href="#继电器">¶</a>继电器</h2>
+<p>有些家用空调或者电饭煲使用继电器控制温度，例如我家的面包机烘烤档每隔一两分钟就会听到继电器吸合的声音😜，机械继电器便宜，缺点明摆着就是蜜汁鼓点，出于保护你的国宝级耳朵，完全可以从方案中pass掉🤣，当然他真正的缺点是并不是这个。</p>
+<p>我们来看下欧姆龙G4A继电器和松乐SRD继电器：</p>
+<p><img src="/aedd6ac2/relayx4.png" alt></p>
+<h3 id="继电器的缺点"><a class="header-anchor" href="#继电器的缺点">¶</a>继电器的缺点</h3>
+<h4 id="开关频率-寿命较低"><a class="header-anchor" href="#开关频率-寿命较低">¶</a>开关频率，寿命较低</h4>
+<p>欧姆龙G4A 20A 250VAC</p>
+<p>不接负载每秒开关10次寿命至少200万次，电阻负载下，建议开关周期2秒，寿命至少10万次，</p>
+<p>松乐SRD 10A 250VAC</p>
+<p>不接负载每秒开关10次寿命至少1000万次，电阻负载下，建议开关周期2秒，寿命至少10万次</p>
+<p>继电器的触点材料为铜，铜镀银，纯银，吸合的瞬间会产生电火花，长期使用会使触点氧化降低导电性能</p>
+<h4 id="吸合-断开时间较长"><a class="header-anchor" href="#吸合-断开时间较长">¶</a>吸合，断开时间较长</h4>
+<p>欧姆龙G4A 吸合 20ms，释放10ms</p>
+<p>松乐SRD 吸合10ms，释放5ms</p>
+<p>这个响应速度增加PID的滞后时间，但若你控制大热惯量的容器加热，例如烤箱，这点滞后其实不算什么</p>
+<h3 id="继电器的优点"><a class="header-anchor" href="#继电器的优点">¶</a>继电器的优点</h3>
+<h4 id="便宜"><a class="header-anchor" href="#便宜">¶</a>便宜</h4>
+<p>几块钱的东西</p>
+<h4 id="电隔离"><a class="header-anchor" href="#电隔离">¶</a>电隔离</h4>
+<p>继电器交流端和低压使能端不需要共地线，所以它本身就带有电隔离作用</p>
+<p>常见的继电器模块低压使能端都用三极管配合光耦控制，光耦又带一次隔离，加上继电器的隔离，构成双电隔离，肥肠的安全啊:</p>
+<p><img src="/aedd6ac2/%E5%8F%8C%E7%82%B9%E9%9A%94%E7%A6%BB.png" alt></p>
+<p>(来自B站某搬运 GreatScott! 顺便烤熟了的辛勤UP主)</p>
+<h4 id="几乎无功率损耗"><a class="header-anchor" href="#几乎无功率损耗">¶</a>几乎无功率损耗</h4>
+<p>见过继电器加风扇散热的嘛？继电器负载时几乎没有压降的，略。</p>
+<h2 id="mosfet"><a class="header-anchor" href="#mosfet">¶</a>Mosfet</h2>
+<p>Mosfet的漏极和源极之间的压降比BJT要低得多，例如之前纳闷为啥L298一个H桥负载12V2A发热就严重，说好的可以带两路2A呢？劳资另一个H桥还没开始负载呢。。。这不，学习了一个L298N的datasheet，看看里面到底是啥子:</p>
+<p>真相了，是两路BJT H桥 - 意法半导体提供的的原理图还是2000年的，估计那个时候基于Mosfet的H桥还没有大量应用吧</p>
+<p>Mosfet效率很高，但场管较高负载开关时，G极和D极的衰减震荡产生的峰值电压会比负载要高许多，这是为啥呢？因为mosfet各引脚之间的寄生电容比双极晶体管大很多</p>
+<p><a href="https://m.sohu.com/a/309841206_486207" target="_blank" rel="noopener">来源：MOS管应用概述</a></p>
+<p>“ 当这个电容足够大，并且前段信号变化快，后端供电电压高，三者结合起来，就会引起积分过充振荡<br>
+这个等价于温控PID中的I模型，如何解决解决这个米勒振荡？</p>
+<p>1️⃣提高MOS管的驱动电阻，前提频率和电压不变，以减缓开关时上升下降沿的速度</p>
+<p>2️⃣ 增加Cgs电容，在Cds之间并上低内阻抗冲击的小电容，或者用RC电路来做吸收电路 ”</p>
+<p>例如德仪优化过的Mosfet功率器件布局图对比，输入电容位置讲究:</p>
+<p>![](C:/Users/29209/OneDrive/桌面/3D printer_work/回流焊炉 2020-02-19/半导体开关元件/MOSFET - 金属-氧化物半导体场效应晶体管/Ti mosfet布局.jpg)</p>
+<p><a href="http://www.ti.com/cn/lit/an/zhca637/zhca637.pdf" target="_blank" rel="noopener">来源: 减小NexFET功率MOSFET震荡的方法</a></p>
+<p>3️⃣使用mosfet驱动器</p>
+<p>东芝的分析十分详细，跪了：</p>
+<p><a href>功率Mosfet的寄生震荡和振铃</a></p>
+<h2 id="igbt"><a class="header-anchor" href="#igbt">¶</a>IGBT</h2>
+<p>IGBT 一般用N-channe</p>
+<p>IGBT(Insulated Gate Bipolar Transistor)，绝缘栅双极型晶体管，是由BJT(双极型三极管)和MOS(绝缘栅型场效应管)组成的复合全控型电压驱动式功率半导体器件, 兼有MOSFET的高输入阻抗和GTR的低导通压降两方面的优点。GTR饱和压降低，载流密度大，但驱动电流较大；MOSFET驱动功率很小，开关速度快，但导通压降大，载流密度小。IGBT综合了以上两种器件的优点，驱动功率小而饱和压降低。非常适合应用于直流电压为600V及以上的变流系统如交流电机、变频器、开关电源、照明电路、牵引传动等领域 - - 来自百度百科</p>
+<p><img src="/aedd6ac2/9.1.0%E5%8A%9F%E7%8E%87%E6%8D%9F%E8%80%97.png" alt></p>
+<p>虽然压降大，但IGBT可以做得bimosfet高得多的的载流，高电流低频下下会比mosfet效率高</p>
+<p><img src="/aedd6ac2/9.2.0.png" alt="20200222223243"></p>
+<p>来自: GreatScott!</p>
+<h2 id="traic"><a class="header-anchor" href="#traic">¶</a>TRAIC</h2>
+<p>稍后补充</p>
+<h1>zero-crossing detector</h1>
+<p>零交叉点，是指在正弦函数图像中的过零点，也就是上一刻为正，下一刻就变成负的那个点</p>
+<h3 id="为什么需要零交叉？"><a class="header-anchor" href="#为什么需要零交叉？">¶</a>为什么需要零交叉？</h3>
+<p>Theremino OptoTriac V1是 MOC3063+BTA16的典型应用电路，其原理图如下：</p>
+<p><img src="/aedd6ac2/OptoTRIACv1sch.png" alt></p>
+<p><a href="https://www.store-ino.com/product/theremino-optotriac-v1/" target="_blank" rel="noopener">官方</a>解释：</p>
+<p>该光电可控硅（最大功率3 KW）**</p>
+<p>该电路与电源开关非常相似。可以打开和关闭大负载，例如炉子和锅炉。它也可以<strong>很好地与电感性负载配合使用</strong>，例如电动机，变压器和大型电磁体</p>
+<p><span style="color:rgb(255, 0, 0);"><strong>通过光耦合器“零交叉”，始终在精确地过零时刻换向，没有电磁干扰，电压非常干净，不会产生危险的额外电压（尖峰）</strong></span></p>
+<p>Theremino开发板的默认PWM脉冲周期（250 Hz）太高，无法直接驱动50Hz负载</p>
+<p>对于响应较慢的设备（例如大型烤箱），可以编写PID调温软件，生成非常慢的PWM（周期为1秒，10秒或更长时间都行）周期为1秒，精度将为1％，而10秒后，精度将为0.1％</p>
+<p>无需任何修改，Arduino系统就可以轻松使用此光电可控硅</p>
+<h4 id="整流全桥加光耦实现过零检测-单片机用零位信号控制traic实现相位角功率调节"><a class="header-anchor" href="#整流全桥加光耦实现过零检测-单片机用零位信号控制traic实现相位角功率调节">¶</a>整流全桥加光耦实现过零检测，单片机用零位信号控制TRAIC实现相位角功率调节</h4>
+<p>来源：<a href="https://create.arduino.cc/projecthub/saulius-bandzevicius/arduino-based-universal-ac-motor-speed-controller-a4ceaf" target="_blank" rel="noopener">Arduino Project Hub</a></p>
+<p><img src="/aedd6ac2/%E9%9B%B6%E4%BD%8D%E4%BF%A1%E5%8F%B7%E4%BC%A0%E7%BB%99%E5%8D%95%E7%89%87%E6%9C%BA%E6%8E%A7%E5%88%B6.jpg" alt></p>
+<p>使用MOC3023触发BTA16(作者实际用的)，该光耦没有集成<strong>过零检测器</strong>，所以作者又搭了一个过零检测触发光耦的电路，将零位信号传给单片机控制.，在零位时换向减小尖峰，实现电机pid调速<a href="https://www.elprocus.com/zero-crossing-detector-circuit-and-working/" target="_blank" rel="noopener">过零检测器(ZCD)电路如何工作？</a></p>
+<h1>人体安全电压电流</h1>
+<p>36V 因人而异，流经人体de电流达10mA时，人开始有感觉，超过30mA时有生命危险，50mA基本死透了</p>
+<h1>漏电保护器与空气开关</h1>
+<h2 id="空气开关原理"><a class="header-anchor" href="#空气开关原理">¶</a>空气开关原理</h2>
+<p><a href="https://www.bilibili.com/video/av32148526" target="_blank" rel="noopener">1.5、2.5、4、6、10平铜线能承载多大电流？配多大的空开？</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">线粗mm<sup>2</sup></th>
+<th style="text-align:center">安全载流量A</th>
+<th style="text-align:center">功率kw</th>
+<th style="text-align:center">空开</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">6-8</td>
+<td style="text-align:center">1.3-1.8</td>
+<td style="text-align:center">C10/C16</td>
+</tr>
+<tr>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">8-15</td>
+<td style="text-align:center">1.7-3</td>
+<td style="text-align:center">C16/C25</td>
+</tr>
+<tr>
+<td style="text-align:center">2.5</td>
+<td style="text-align:center">16-25</td>
+<td style="text-align:center">3.5-5.5</td>
+<td style="text-align:center">C25/C32</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">25-32</td>
+<td style="text-align:center">5.5-7</td>
+<td style="text-align:center">C32/C40</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">32-40</td>
+<td style="text-align:center">7-9</td>
+<td style="text-align:center">C40/C63</td>
+</tr>
+</tbody>
+</table>
+<p>最大线径我知道的是240㎜²导线可安全承载400A。但这个载流量跟导线的敷设方式（穿墙，埋地或明敷设），导线的堆叠方式，环境温度和湿度以及是否硬导线都有关系。</p>
+<h2 id="漏电保护器原理"><a class="header-anchor" href="#漏电保护器原理">¶</a>漏电保护器原理</h2>
+<p><a href="%5Bhttps://baike.baidu.com/item/%E9%9B%B6%E5%BA%8F%E7%94%B5%E6%B5%81%E4%BA%92%E6%84%9F%E5%99%A8%5D(https://baike.baidu.com/item/%E9%9B%B6%E5%BA%8F%E7%94%B5%E6%B5%81%E4%BA%92%E6%84%9F%E5%99%A8)">零序电流互感器</a>，当漏电时两个互感器的电流不平衡就会跳闸，非常灵敏，当负载超过额定值时也会跳闸</p>
+<p>家用30mA单相漏电保护器进线接反了，也没什么问题，一样起保护作用。但对有标识的，要按标识来接。漏电保护器进线端左零右火 ，即：标有L的接火线，标有N的接零线。<br>
+漏电保护器检测到火线和地线有电流通过时，且电流强度大于漏电保护器的额定值时，漏电保护器就会动作。</p>
+<p>强烈建议使用220v交流实验时加装2P漏保！！！</p>
+<p><a href="https://zhuanlan.zhihu.com/p/31551940" target="_blank" rel="noopener">家用漏电保护器接线方法图解</a></p>
+<h1>关于示波器测市电</h1>
+<p>稍后补充</p>
+<h1>IP防护等级</h1>
+<p>西门子和施耐德的漏电保护器的参数上有个“<strong>IP20</strong>”，是什么意思？</p>
+<p>我们知道一些手机厂家会时不时来个“<strong>IP68”</strong>，说什么手机可在水下4米待半小时不进水，其实**”IP“<strong>俩字就是指”</strong>”IP防护标准“<strong>，</strong>”IP“**后两位分别指防尘和防水等级，详见<a href="%5Bhttps://baike.baidu.com/item/IP%E9%98%B2%E6%8A%A4%E7%AD%89%E7%BA%A7%5D(https://baike.baidu.com/item/IP%E9%98%B2%E6%8A%A4%E7%AD%89%E7%BA%A7)">百科</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/esp8266/" rel="tag"># esp8266</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/6c57f882/" rel="next" title="hexo 博客如何写出彩色字体，能实时预览的那种？">
+                  <i class="fa fa-chevron-left"></i> hexo 博客如何写出彩色字体，能实时预览的那种？
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/psa.jpg"
+      alt="过气德国佬">
+  <p class="site-author-name" itemprop="name">过气德国佬</p>
+  <div class="site-description motion-element" itemprop="description">潮起潮落，云卷云舒</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">PID：从弱电到强电</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继电器"><span class="nav-number">1.1.</span> <span class="nav-text">¶继电器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继电器的缺点"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶继电器的缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开关频率-寿命较低"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">¶开关频率，寿命较低</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#吸合-断开时间较长"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">¶吸合，断开时间较长</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继电器的优点"><span class="nav-number">1.1.2.</span> <span class="nav-text">¶继电器的优点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#便宜"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">¶便宜</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电隔离"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">¶电隔离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几乎无功率损耗"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">¶几乎无功率损耗</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mosfet"><span class="nav-number">1.2.</span> <span class="nav-text">¶Mosfet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#igbt"><span class="nav-number">1.3.</span> <span class="nav-text">¶IGBT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#traic"><span class="nav-number">1.4.</span> <span class="nav-text">¶TRAIC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">zero-crossing detector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要零交叉？"><span class="nav-number">2.0.1.</span> <span class="nav-text">¶为什么需要零交叉？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整流全桥加光耦实现过零检测-单片机用零位信号控制traic实现相位角功率调节"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">¶整流全桥加光耦实现过零检测，单片机用零位信号控制TRAIC实现相位角功率调节</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">人体安全电压电流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">漏电保护器与空气开关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#空气开关原理"><span class="nav-number">4.1.</span> <span class="nav-text">¶空气开关原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漏电保护器原理"><span class="nav-number">4.2.</span> <span class="nav-text">¶漏电保护器原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">关于示波器测市电</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">IP防护等级</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+
+        
+
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("07/19/2019 15:00:00");
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML="(∩•̀ω•́)⊃--*⋆本站由米板1代搭建，已运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";
+}
+function setzero(i) {
+    if (i<10) {
+        i="0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
+
+
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">过气德国佬</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">31k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">28 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        <span>0%</span>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
+
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'iWuakuHkkRt5xT7Ct9cyj8nO-gzGzoHsz',
+    appKey: 'PAz23pDzHnucqRDkVMShMp5B',
+    placeholder: '(๑•̀ㅁ•́ฅ✧ 说点什么吧！',
+    avatar: '',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

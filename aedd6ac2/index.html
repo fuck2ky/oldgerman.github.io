@@ -66,9 +66,14 @@
 <meta property="og:image" content="http://yoursite.com/aedd6ac2/%E5%8F%8C%E7%82%B9%E9%9A%94%E7%A6%BB.png">
 <meta property="og:image" content="http://yoursite.com/aedd6ac2/9.1.0%E5%8A%9F%E7%8E%87%E6%8D%9F%E8%80%97.png">
 <meta property="og:image" content="http://yoursite.com/aedd6ac2/9.2.0.png">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/moc606X_%E5%AF%BC%E9%80%9A%E7%94%B5%E6%B5%81.jpg">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/moc6063_%E5%8F%8D%E5%B9%B6%E8%81%94%E5%85%B8%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/moc3063_%E5%8F%8C%E5%90%91%E5%85%B8%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/DC_Solid_State_Relay.png">
 <meta property="og:image" content="http://yoursite.com/aedd6ac2/OptoTRIACv1sch.png">
 <meta property="og:image" content="http://yoursite.com/aedd6ac2/%E9%9B%B6%E4%BD%8D%E4%BF%A1%E5%8F%B7%E4%BC%A0%E7%BB%99%E5%8D%95%E7%89%87%E6%9C%BA%E6%8E%A7%E5%88%B6.jpg">
-<meta property="og:updated_time" content="2020-02-23T15:53:19.555Z">
+<meta property="og:image" content="http://yoursite.com/aedd6ac2/%E7%BA%BF%E5%BE%84%E4%B8%8E%E7%94%B5%E6%B5%81%E5%8A%9F%E7%8E%87%E7%9A%84%E5%AE%89%E5%85%A8%E8%B4%9F%E8%BD%BD.jpg">
+<meta property="og:updated_time" content="2020-02-24T09:58:32.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="esp8266 控制220V交流电">
 <meta name="twitter:description" content="附送用电安全指南，高压危险，请注意用电卫生！">
@@ -292,7 +297,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-23 23:53:19" itemprop="dateModified" datetime="2020-02-23T23:53:19+08:00">2020-02-23</time>
+                <time title="修改时间：2020-02-24 17:58:32" itemprop="dateModified" datetime="2020-02-24T17:58:32+08:00">2020-02-24</time>
               </span>
             
           
@@ -328,7 +333,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>3.4k</span>
+              <span>5k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -338,7 +343,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>3 分钟</span>
+              <span>5 分钟</span>
             </span>
           
             <div class="post-description">附送用电安全指南，高压危险，请注意用电卫生！</div>
@@ -358,8 +363,8 @@
 <p>后来囤了个米家电烤箱，拆得七零八落搁书房一个多月了，为啥拆，好好用不行吗？</p>
 <p>事情是这样的，说来话长，算了长话短说，用风枪焊QFN封装，很容易让周边的元件吹偏或者脱落，简直心态炸裂有木有？smt的厂家都是刷好锡膏过多段回流焊炉，那焊点煞是饱满，于是琢磨着自己diy回流焊机，看了下各种diy方案，主要魔改电热盘或电烤箱</p>
 <p>emmm价格某宝看了下，你电炉不带运费都50多了，咸鱼100包邮的猴米烤箱，不仅全封闭还带热风循环(小声bb)，它不香吗😂</p>
- <div align="center"><span style="color:white;background:black;font-size:20px;">&#12288&#12288&#12288&#12288“事情总会朝着意想不到的方向发展”&#12288&#12288&#12288 &#12288</span></div>
-pid解算出的pwm信号，还需要实现从弱电到强电的PWM转换，以控制烤箱的热管
+ <div align="center"><span style="color:white;background:black;font-size:20px;">&#12288&“事情总会朝着意想不到的方向发展”&#12288</span></div>
+<p>pid解算出的pwm信号，还需要实现从弱电到强电的PWM转换，以控制烤箱的热管</p>
 <p>使能器件可以用继电器(机械式)，mosfet，或者TRAIC，还有SSR，SSR的内部一般也是用mosfet或者TRAIC实现开关，博主最后选择了TRAIC+过零检测光耦，在回答为什么之前，你们还要学习一个各种器件的优劣：</p>
 <h2 id="继电器"><a class="header-anchor" href="#继电器">¶</a>继电器</h2>
 <p>有些家用空调或者电饭煲使用继电器控制温度，例如我家的面包机烘烤档每隔一两分钟就会听到继电器吸合的声音😜，机械继电器便宜，缺点明摆着就是蜜汁鼓点，出于保护你的国宝级耳朵，完全可以从方案中pass掉🤣，当然他真正的缺点是并不是这个。</p>
@@ -387,6 +392,7 @@ pid解算出的pwm信号，还需要实现从弱电到强电的PWM转换，以�
 <h4 id="几乎无功率损耗"><a class="header-anchor" href="#几乎无功率损耗">¶</a>几乎无功率损耗</h4>
 <p>见过继电器加风扇散热的嘛？继电器负载时几乎没有压降的，略。</p>
 <h2 id="mosfet"><a class="header-anchor" href="#mosfet">¶</a>Mosfet</h2>
+<p><a href="http://www.kiaic.com/article/detail/1995.html" target="_blank" rel="noopener">mosfet四种类型的区别-KIA</a></p>
 <p>Mosfet的漏极和源极之间的压降比BJT要低得多，例如之前纳闷为啥L298一个H桥负载12V2A发热就严重，说好的可以带两路2A呢？劳资另一个H桥还没开始负载呢。。。这不，学习了一个L298N的datasheet，看看里面到底是啥子:</p>
 <p>真相了，是两路BJT H桥 - 意法半导体提供的的原理图还是2000年的，估计那个时候基于Mosfet的H桥还没有大量应用吧</p>
 <p>Mosfet效率很高，但场管较高负载开关时，G极和D极的衰减震荡产生的峰值电压会比负载要高许多，这是为啥呢？因为mosfet各引脚之间的寄生电容比双极晶体管大很多</p>
@@ -408,8 +414,55 @@ pid解算出的pwm信号，还需要实现从弱电到强电的PWM转换，以�
 <p>虽然压降大，但IGBT可以做得bimosfet高得多的的载流，高电流低频下下会比mosfet效率高</p>
 <p><img src="/aedd6ac2/9.2.0.png" alt="20200222223243"></p>
 <p>来自: GreatScott!</p>
+<p>感性负载下，IGBT关断瞬间产生极高的自感反相电压，可能击穿IGBT，需要反并联快恢复二极管续流</p>
 <h2 id="traic"><a class="header-anchor" href="#traic">¶</a>TRAIC</h2>
 <p>稍后补充</p>
+<h1>自己做固态继电器</h1>
+<p>之前提到过，固态继电器内部一般用mosfet或者TRAIC实现开关，</p>
+<p>👊 为了简要说明TRAIC和MOSFET固态继电器控制交流/直流负载的区别，开篇安利一文：</p>
+<p><a href="https://e2e.ti.com/blogs_/b/industrial_strength/archive/2016/07/26/a-modern-approach-to-solid-state-relay-design" target="_blank" rel="noopener">Ti：固态继电器设计的现代方法</a></p>
+<h2 id="traic固态继电器"><a class="header-anchor" href="#traic固态继电器">¶</a>TRAIC固态继电器</h2>
+<p>市面上售卖的这种继电器TRAIC一般用带过零触发的双向光耦驱动，这种光耦只能在交流零位开关，所以<span style="color:rgb(255, 0, 0);"><strong>只能控制交流通断，不能开关直流</strong></span></p>
+<p>若好奇请戳：<a href="https://www.bilibili.com/video/av53884960/?spm_id_from=trigger_reload" target="_blank" rel="noopener">交流负载用固态继电器是否可以接直流负载？如果接直流负载会怎样</a></p>
+<h3 id="过零触发的双向光耦"><a class="header-anchor" href="#过零触发的双向光耦">¶</a>过零触发的双向光耦</h3>
+<p>例如MOC304X，MOC306X，MOC308X，‘X’可以是‘1’，’2‘，‘3’，用来区分不同型号的光耦LED的导通电流:</p>
+<p><img src="/aedd6ac2/moc606X_%E5%AF%BC%E9%80%9A%E7%94%B5%E6%B5%81.jpg" alt></p>
+<h3 id="moc3063典型应用"><a class="header-anchor" href="#moc3063典型应用">¶</a>MOC3063典型应用</h3>
+<p>以下是MOC3063(带过零触发的光耦)手册的，控制晶闸管的典型电路：</p>
+<p>1.反并联晶闸管</p>
+<p>SCR可以单向关断，所以两个SCR反向并联的TRIAC可以控制交流电流</p>
+<p><img src="/aedd6ac2/moc6063_%E5%8F%8D%E5%B9%B6%E8%81%94%E5%85%B8%E5%9E%8B.jpg" alt></p>
+<p>2.双向晶闸管</p>
+<p><img src="/aedd6ac2/moc3063_%E5%8F%8C%E5%90%91%E5%85%B8%E5%9E%8B.jpg" alt></p>
+<p><span style="color:rgb(255, 0, 0);"><strong>特别提醒:</strong></span></p>
+<p><span style="color:rgb(255, 0, 0);"> <strong>上电测试时，管子背面金属片上带高压交流电，散热片直触管子，也会带高压交流电，千万不要用手摸！！！</strong></span></p>
+<p><a href="https://www.bilibili.com/video/av16621903?from=search&amp;seid=2207986570359685649" target="_blank" rel="noopener">固态继电器||自己做还是买</a></p>
+<p><img src alt></p>
+<h2 id="mosfet固态继电器"><a class="header-anchor" href="#mosfet固态继电器">¶</a>Mosfet固态继电器</h2>
+<h3 id="mosfet直流固态继电器"><a class="header-anchor" href="#mosfet直流固态继电器">¶</a>Mosfet直流固态继电器</h3>
+<p><img src="/aedd6ac2/DC_Solid_State_Relay.png" alt></p>
+<p><a href="https://www.electronics-lab.com/wp-content/uploads/2016/01/DC_Solid_State_Relay.pdf" target="_blank" rel="noopener">来自：TWOVOLT1</a></p>
+<p>PS：Mosfet安装姿势好评，便于热管直触散热，Mark</p>
+<h3 id="mosfet交流固态继电器"><a class="header-anchor" href="#mosfet交流固态继电器">¶</a>Mosfet交流固态继电器</h3>
+<p>可行，和上面反并联SCR控制交流差不多</p>
+<p><a href="https://www.amobbs.com/thread-772140-1-1.html" target="_blank" rel="noopener">来自：阿莫电子论坛阿甘老师</a></p>
+<p>Mosfet源极漏极有个反向二极管，该二极管是寄生在晶元里，也叫寄生二极管</p>
+<p>例如IRFP260：</p>
+<p>![](C:/Users/29209/OneDrive/桌面/3D printer_work/回流焊炉 2020-02-19/半导体开关元件/MOSFET - 金属-氧化物半导体场效应晶体管/IRFP260mosfet.jpg)</p>
+<p><a href="https://blog.csdn.net/Gdou_YUN/article/details/74181261" target="_blank" rel="noopener">DC-DC buck</a>的下臂MOSFET就是工作在反向导通状态的，<br>
+反向工作的话也是靠GS间的电压来控制，所以要注意g极与s极的电压不要超限</p>
+<p>做交流开关的话可以将两个mosfet反向串联，s极连在一起，控制两个g极就可以了</p>
+<p>完全可以的,我曾经就这么使用过.分别控制两路500KHz的交流电输出.<br>
+使用的方法就是两个mosfet反向串联，s极连在一起，控制两个g极.</p>
+<p>以N型MOSFET为例，MOSFET在关断状态下施加D+ S-的电压是不能形成通路的，而S+D-时由于寄生二极管的作用而呈二极管正向特性。MOSFET的GS间加正向驱动电压，D极与S极之间呈低阻值电阻特性，不管DS间电压方向如何MOSFET都是导通的，在MOSFET导通状态是允许电流从S流向D的。<br>
+如果将两个N型MOSFET的S极并联，G极也并联，GS间未加驱动电压前，两个MOSFET的寄生二极管是反向串联的，所以两个MOSFET的D极之间是不通的；如果在GS间加正向驱动电压使得两个MOSFET都导通，如果两个D极间有电压，则一个工作在正向导通，另一个工作在反向导通状态。因此可以控制GS间电压来控制两个D极之间的通断。</p>
+<p>看场效应管的结构图去。<br>
+只要D、S间存在导电沟道，D到S就能通，S到D也能通。而D、S存在导电沟道的前提是：<br>
+N沟道增强型：G与S之间加正电压，并且够高，至少高于开启电压；<br>
+N沟道耗尽型：因为D、S间本来就有导电沟道，所以G与S之间加的负电压要比较低，不能高于关断电压；<br>
+P沟道的就不说了。<br>
+编辑原因：<br>
+加一句，要做交流的开关，要参考阿甘意见，要用两管子的</p>
 <h1>zero-crossing detector</h1>
 <p>零交叉点，是指在正弦函数图像中的过零点，也就是上一刻为正，下一刻就变成负的那个点</p>
 <h3 id="为什么需要零交叉？"><a class="header-anchor" href="#为什么需要零交叉？">¶</a>为什么需要零交叉？</h3>
@@ -422,58 +475,106 @@ pid解算出的pwm信号，还需要实现从弱电到强电的PWM转换，以�
 <p>Theremino开发板的默认PWM脉冲周期（250 Hz）太高，无法直接驱动50Hz负载</p>
 <p>对于响应较慢的设备（例如大型烤箱），可以编写PID调温软件，生成非常慢的PWM（周期为1秒，10秒或更长时间都行）周期为1秒，精度将为1％，而10秒后，精度将为0.1％</p>
 <p>无需任何修改，Arduino系统就可以轻松使用此光电可控硅</p>
-<h4 id="整流全桥加光耦实现过零检测-单片机用零位信号控制traic实现相位角功率调节"><a class="header-anchor" href="#整流全桥加光耦实现过零检测-单片机用零位信号控制traic实现相位角功率调节">¶</a>整流全桥加光耦实现过零检测，单片机用零位信号控制TRAIC实现相位角功率调节</h4>
+<h4 id="整流全桥加普通光耦实现过零检测-单片机根据零位信号控制traic的开关"><a class="header-anchor" href="#整流全桥加普通光耦实现过零检测-单片机根据零位信号控制traic的开关">¶</a>整流全桥加普通光耦实现过零检测，单片机根据零位信号控制TRAIC的开关</h4>
 <p>来源：<a href="https://create.arduino.cc/projecthub/saulius-bandzevicius/arduino-based-universal-ac-motor-speed-controller-a4ceaf" target="_blank" rel="noopener">Arduino Project Hub</a></p>
 <p><img src="/aedd6ac2/%E9%9B%B6%E4%BD%8D%E4%BF%A1%E5%8F%B7%E4%BC%A0%E7%BB%99%E5%8D%95%E7%89%87%E6%9C%BA%E6%8E%A7%E5%88%B6.jpg" alt></p>
 <p>使用MOC3023触发BTA16(作者实际用的)，该光耦没有集成<strong>过零检测器</strong>，所以作者又搭了一个过零检测触发光耦的电路，将零位信号传给单片机控制.，在零位时换向减小尖峰，实现电机pid调速<a href="https://www.elprocus.com/zero-crossing-detector-circuit-and-working/" target="_blank" rel="noopener">过零检测器(ZCD)电路如何工作？</a></p>
 <h1>人体安全电压电流</h1>
 <p>36V 因人而异，流经人体de电流达10mA时，人开始有感觉，超过30mA时有生命危险，50mA基本死透了</p>
 <h1>漏电保护器与空气开关</h1>
+<h2 id="公制线径与载流关系"><a class="header-anchor" href="#公制线径与载流关系">¶</a>公制线径与载流关系</h2>
+<p><img src="/aedd6ac2/%E7%BA%BF%E5%BE%84%E4%B8%8E%E7%94%B5%E6%B5%81%E5%8A%9F%E7%8E%87%E7%9A%84%E5%AE%89%E5%85%A8%E8%B4%9F%E8%BD%BD.jpg" alt="510.9=4. 5"></p>
+<h3 id="特氟龙镀银线对应公制线径："><a class="header-anchor" href="#特氟龙镀银线对应公制线径：">¶</a>特氟龙镀银线对应公制线径：</h3>
+<p>特氟龙镀银线是多股铜镀锡软线，对应的公制线是硬线，多芯线较软，施工布线方便，一般用于控制回路布线；单芯线较硬，一般用于主回路布线。不管是多芯线还是单芯线，只要它们的截面积相同，则载流量就相同</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">英制线径(AWG)</th>
+<th style="text-align:center">对应公制规格(mm<sup>2</sup>)</th>
+<th style="text-align:center">安全载流量(A)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.35</td>
+<td style="text-align:center">1.9</td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td style="text-align:center">0.5</td>
+<td style="text-align:center">2.7</td>
+</tr>
+<tr>
+<td style="text-align:center">18</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">5.4</td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">8.1</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center">2.0</td>
+<td style="text-align:center">10.8</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.diangon.com/thread-36618-1-1.html" target="_blank" rel="noopener">多芯线和单芯线哪个好？单股线和多股线的区别</a></p>
 <h2 id="空气开关原理"><a class="header-anchor" href="#空气开关原理">¶</a>空气开关原理</h2>
+<h3 id="线径与空开选配"><a class="header-anchor" href="#线径与空开选配">¶</a>线径与空开选配</h3>
 <p><a href="https://www.bilibili.com/video/av32148526" target="_blank" rel="noopener">1.5、2.5、4、6、10平铜线能承载多大电流？配多大的空开？</a></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">线粗mm<sup>2</sup></th>
-<th style="text-align:center">安全载流量A</th>
-<th style="text-align:center">功率kw</th>
-<th style="text-align:center">空开</th>
+<th style="text-align:center">线粗(mm<sup>2</sup>)</th>
+<th style="text-align:center">载流量(A)</th>
+<th style="text-align:center">安全载流量(A)</th>
+<th style="text-align:center">功率(kw)</th>
+<th style="text-align:center">选用空开规格</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">1</td>
 <td style="text-align:center">6-8</td>
+<td style="text-align:center">5.4</td>
 <td style="text-align:center">1.3-1.8</td>
 <td style="text-align:center">C10/C16</td>
 </tr>
 <tr>
 <td style="text-align:center">1.5</td>
 <td style="text-align:center">8-15</td>
+<td style="text-align:center">8.1</td>
 <td style="text-align:center">1.7-3</td>
 <td style="text-align:center">C16/C25</td>
 </tr>
 <tr>
 <td style="text-align:center">2.5</td>
 <td style="text-align:center">16-25</td>
+<td style="text-align:center">13.5</td>
 <td style="text-align:center">3.5-5.5</td>
 <td style="text-align:center">C25/C32</td>
 </tr>
 <tr>
 <td style="text-align:center">4</td>
 <td style="text-align:center">25-32</td>
+<td style="text-align:center">19.2</td>
 <td style="text-align:center">5.5-7</td>
 <td style="text-align:center">C32/C40</td>
 </tr>
 <tr>
 <td style="text-align:center">6</td>
 <td style="text-align:center">32-40</td>
+<td style="text-align:center">25.2</td>
 <td style="text-align:center">7-9</td>
 <td style="text-align:center">C40/C63</td>
 </tr>
 </tbody>
 </table>
-<p>最大线径我知道的是240㎜²导线可安全承载400A。但这个载流量跟导线的敷设方式（穿墙，埋地或明敷设），导线的堆叠方式，环境温度和湿度以及是否硬导线都有关系。</p>
+<p>载流量跟敷设方式（穿墙，埋地或明敷设），堆叠方式，环境温湿度以及是否硬导线都有关系，不细说</p>
 <h2 id="漏电保护器原理"><a class="header-anchor" href="#漏电保护器原理">¶</a>漏电保护器原理</h2>
 <p><a href="%5Bhttps://baike.baidu.com/item/%E9%9B%B6%E5%BA%8F%E7%94%B5%E6%B5%81%E4%BA%92%E6%84%9F%E5%99%A8%5D(https://baike.baidu.com/item/%E9%9B%B6%E5%BA%8F%E7%94%B5%E6%B5%81%E4%BA%92%E6%84%9F%E5%99%A8)">零序电流互感器</a>，当漏电时两个互感器的电流不平衡就会跳闸，非常灵敏，当负载超过额定值时也会跳闸</p>
 <p>家用30mA单相漏电保护器进线接反了，也没什么问题，一样起保护作用。但对有标识的，要按标识来接。漏电保护器进线端左零右火 ，即：标有L的接火线，标有N的接零线。<br>
@@ -519,6 +620,10 @@ pid解算出的pwm信号，还需要实现从弱电到强电的PWM转换，以�
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/b85c9bb4/" rel="prev" title="esp8266 同类spi设备共用CS">
+                  esp8266 同类spi设备共用CS <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -578,7 +683,7 @@ pid解算出的pwm信号，还需要实现从弱电到强电的PWM转换，以�
         
           <a href="/archives">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -644,7 +749,7 @@ pid解算出的pwm信号，还需要实现从弱电到强电的PWM转换，以�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">PID：从弱电到强电</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继电器"><span class="nav-number">1.1.</span> <span class="nav-text">¶继电器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继电器的缺点"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶继电器的缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开关频率-寿命较低"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">¶开关频率，寿命较低</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#吸合-断开时间较长"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">¶吸合，断开时间较长</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继电器的优点"><span class="nav-number">1.1.2.</span> <span class="nav-text">¶继电器的优点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#便宜"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">¶便宜</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电隔离"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">¶电隔离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几乎无功率损耗"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">¶几乎无功率损耗</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mosfet"><span class="nav-number">1.2.</span> <span class="nav-text">¶Mosfet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#igbt"><span class="nav-number">1.3.</span> <span class="nav-text">¶IGBT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#traic"><span class="nav-number">1.4.</span> <span class="nav-text">¶TRAIC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">zero-crossing detector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要零交叉？"><span class="nav-number">2.0.1.</span> <span class="nav-text">¶为什么需要零交叉？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整流全桥加光耦实现过零检测-单片机用零位信号控制traic实现相位角功率调节"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">¶整流全桥加光耦实现过零检测，单片机用零位信号控制TRAIC实现相位角功率调节</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">人体安全电压电流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">漏电保护器与空气开关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#空气开关原理"><span class="nav-number">4.1.</span> <span class="nav-text">¶空气开关原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漏电保护器原理"><span class="nav-number">4.2.</span> <span class="nav-text">¶漏电保护器原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">关于示波器测市电</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">IP防护等级</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">PID：从弱电到强电</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继电器"><span class="nav-number">1.1.</span> <span class="nav-text">¶继电器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继电器的缺点"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶继电器的缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开关频率-寿命较低"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">¶开关频率，寿命较低</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#吸合-断开时间较长"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">¶吸合，断开时间较长</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继电器的优点"><span class="nav-number">1.1.2.</span> <span class="nav-text">¶继电器的优点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#便宜"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">¶便宜</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电隔离"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">¶电隔离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几乎无功率损耗"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">¶几乎无功率损耗</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mosfet"><span class="nav-number">1.2.</span> <span class="nav-text">¶Mosfet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#igbt"><span class="nav-number">1.3.</span> <span class="nav-text">¶IGBT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#traic"><span class="nav-number">1.4.</span> <span class="nav-text">¶TRAIC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">自己做固态继电器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#traic固态继电器"><span class="nav-number">2.1.</span> <span class="nav-text">¶TRAIC固态继电器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过零触发的双向光耦"><span class="nav-number">2.1.1.</span> <span class="nav-text">¶过零触发的双向光耦</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#moc3063典型应用"><span class="nav-number">2.1.2.</span> <span class="nav-text">¶MOC3063典型应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mosfet固态继电器"><span class="nav-number">2.2.</span> <span class="nav-text">¶Mosfet固态继电器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mosfet直流固态继电器"><span class="nav-number">2.2.1.</span> <span class="nav-text">¶Mosfet直流固态继电器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mosfet交流固态继电器"><span class="nav-number">2.2.2.</span> <span class="nav-text">¶Mosfet交流固态继电器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">zero-crossing detector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要零交叉？"><span class="nav-number">3.0.1.</span> <span class="nav-text">¶为什么需要零交叉？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整流全桥加普通光耦实现过零检测-单片机根据零位信号控制traic的开关"><span class="nav-number">3.0.1.1.</span> <span class="nav-text">¶整流全桥加普通光耦实现过零检测，单片机根据零位信号控制TRAIC的开关</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">人体安全电压电流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">漏电保护器与空气开关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#公制线径与载流关系"><span class="nav-number">5.1.</span> <span class="nav-text">¶公制线径与载流关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特氟龙镀银线对应公制线径："><span class="nav-number">5.1.1.</span> <span class="nav-text">¶特氟龙镀银线对应公制线径：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空气开关原理"><span class="nav-number">5.2.</span> <span class="nav-text">¶空气开关原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线径与空开选配"><span class="nav-number">5.2.1.</span> <span class="nav-text">¶线径与空开选配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漏电保护器原理"><span class="nav-number">5.3.</span> <span class="nav-text">¶漏电保护器原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">关于示波器测市电</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text">IP防护等级</span></a></li></ol></div>
             
 
           </div>
@@ -706,12 +811,12 @@ show_date_time();
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">31k</span>
+    <span title="站点总字数">39k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">28 分钟</span>
+    <span title="站点阅读时长">35 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
